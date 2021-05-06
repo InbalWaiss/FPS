@@ -1,0 +1,2 @@
+model_checkpoint_path: "qnet0.cptk"
+all_model_checkpoint_paths: "qnet0.cptk"

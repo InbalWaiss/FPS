@@ -1,0 +1,2 @@
+model_checkpoint_path: "safe_path"
+all_model_checkpoint_paths: "safe_path"

@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: pydot-ng
+Version: 2.0.0
+Summary: Python interface to Graphviz's Dot
+Home-page: https://github.com/pydot/pydot-ng
+Author: Ero Carrera
+Author-email: ero@dkbza.org
+Maintainer: Sebastian Kalinowski
+Maintainer-email: sebastian@kalinowski.eu
+License: MIT
+Keywords: graphviz dot graphs visualization
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pyparsing (>=2.0.1)
+
+pydot - Python interface to Graphviz's Dot language
+---------------------------------------------------
+Ero Carrera (c) 2004-2007
+
+ero@dkbza.org
+
+This code is distributed under the MIT license.
+
+.. image:: https://travis-ci.org/pydot/pydot-ng.svg?branch=master
+    :target: https://travis-ci.org/pydot/pydot-ng
+
+
+Requirements:
+=============
+
+pyparsing: pydot requires the pyparsing module in order to be
+	able to load DOT files.
+
+GraphViz:  is needed in order to render the graphs into any of
+	the plethora of output formats supported.
+
+Installation:
+=============
+
+Should suffice with doing:
+
+ python setup.py install
+
+Needless to say, no installation is needed just to use the module. A mere:
+
+ import pydot_ng
+
+should do it, provided that the directory containing the modules is on Python
+module search path.
+
+This library is API compatible with original pydot so you can use it like this:
+
+ import pydot_ng as pydot
+
+
