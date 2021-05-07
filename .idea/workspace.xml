@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19617cd5-27af-4f97-9b0e-ec6f2ed2f11c" name="Default Changelist" comment="no greedy">
+    <list default="true" id="19617cd5-27af-4f97-9b0e-ec6f2ed2f11c" name="Default Changelist" comment="no greedy 3">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/SingleAgentCombat-main.iml" afterDir="false" />
@@ -8536,12 +8536,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611132936949</updated>
     </task>
-    <task id="LOCAL‎00026">
-      <created>1613913241966</created>
-      <option name="number" value="LOCAL‎00026" />
-      <option name="presentableId" value="LOCAL‎00026" />
-      <updated>1613913241966</updated>
-    </task>
     <task id="LOCAL‎00027" summary="packages">
       <created>1613913272796</created>
       <option name="number" value="LOCAL‎00027" />
@@ -8830,7 +8824,13 @@
       <option name="presentableId" value="LOCAL‎00074" />
       <updated>1620333368162</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL‎00075" summary="no greedy 3">
+      <created>1620336253621</created>
+      <option name="number" value="LOCAL‎00075" />
+      <option name="presentableId" value="LOCAL‎00075" />
+      <updated>1620336253621</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -8870,7 +8870,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/SingleAgentCombat-main" />
     </ignored-roots>
-    <MESSAGE value="dominating points added to state" />
     <MESSAGE value="dominating_points pics" />
     <MESSAGE value="DQNkeras set_model_name" />
     <MESSAGE value="save_reward_stats" />
@@ -8895,7 +8894,8 @@
     <MESSAGE value="init eval" />
     <MESSAGE value="git ignore large files" />
     <MESSAGE value="no greedy" />
-    <option name="LAST_COMMIT_MESSAGE" value="no greedy" />
+    <MESSAGE value="no greedy 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="no greedy 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

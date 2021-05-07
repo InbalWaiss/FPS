@@ -1,2 +1,5 @@
 /Greedy/
 /venv/Lib/site-packages/tensorflow/
+/Arena/log/
+/Arena/logs/
+/venv/
