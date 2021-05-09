@@ -95,84 +95,72 @@
       <change afterPath="$PROJECT_DIR$/Arena/statistics/07_05_09_54_DQN_keras_Greedy_player_15X15_with_LOS_penalty/win_statistics12600.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_2020.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_2021_   1.00max_  -0.59avg_  -1.75min__1620536306.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics3000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics2021.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE2020.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics2020.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_4040.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_4041_   1.00max_  -0.78avg_  -1.65min__1620537060.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics5000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics4041.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE4040.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics4040.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_6060.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_6061_   1.00max_  -0.80avg_  -1.60min__1620537811.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics7000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics6061.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE6060.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics6060.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_8080.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_8081_   1.00max_  -0.60avg_  -1.75min__1620538472.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics9000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics8081.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE8080.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics8080.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_10100.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_10101_   0.90max_  -0.83avg_  -1.50min__1620539138.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics11000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics10101.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE10100.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics10100.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_12120.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_12121_   1.00max_  -0.72avg_  -1.70min__1620539774.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics13000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics12121.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE12120.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics12120.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_14140.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_14141_   1.00max_  -0.76avg_  -1.65min__1620540363.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics15000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics14141.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE14140.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics14140.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_16160.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_16161_   1.00max_  -0.68avg_  -1.60min__1620540951.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics17000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics16161.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE16160.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics16160.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_18180.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_18181_   1.00max_  -0.76avg_  -1.90min__1620541553.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics19000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics18181.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE18180.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics18180.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_20200.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_20201_   1.00max_  -0.86avg_  -1.60min__1620542155.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics21000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics20201.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE20200.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics20200.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_22220.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_22221_   1.00max_  -0.80avg_  -1.55min__1620542755.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics23000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics22221.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE22220.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/win_statistics22220.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/#steps_24240.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/Statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_24241_   1.00max_  -0.79avg_  -1.50min__1620543341.model" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/evaluation_statistics25000.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/reward_statistics24241.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/rewards_BLUE24240.png" afterDir="false" />
@@ -204,9 +192,14 @@
       <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics202000_conv_w.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics455000_FC.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics455000_FC_w.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DQN/DQNAgent_keras.py" beforeDir="false" afterPath="$PROJECT_DIR$/DQN/DQNAgent_keras.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Greedy_player.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation_statistics124000_berlin_conv.png" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation_statistics/evaluation_statistics124000_berlin_conv.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation_statistics1485000_15X15.png" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation_statistics/evaluation_statistics1485000_15X15.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation_statistics301000_berlin_FC.png" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation_statistics/evaluation_statistics301000_berlin_FC.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_only_blue.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,11 +259,11 @@
       <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\Greedy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\evaluation_statistics" />
       <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\DQN" />
       <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\Common" />
       <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\Arena" />
       <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main" />
-      <recent name="C:\Users\inbalw\Downloads\SingleAgentCombat-main\SingleAgentCombat-main\Common\Preprocessing" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -404,12 +397,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611132936949</updated>
-    </task>
-    <task id="LOCAL‎00029" summary="set Qtable epsilon to be 0.15">
-      <created>1613982661754</created>
-      <option name="number" value="LOCAL‎00029" />
-      <option name="presentableId" value="LOCAL‎00029" />
-      <updated>1613982661754</updated>
     </task>
     <task id="LOCAL‎00030" summary="no clip reward">
       <created>1614025739267</created>
@@ -699,7 +686,13 @@
       <option name="presentableId" value="LOCAL‎00077" />
       <updated>1620361828726</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL‎00078" summary="removed comments">
+      <created>1620565899283</created>
+      <option name="number" value="LOCAL‎00078" />
+      <option name="presentableId" value="LOCAL‎00078" />
+      <updated>1620565899284</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -739,8 +732,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/SingleAgentCombat-main" />
     </ignored-roots>
-    <MESSAGE value="save_reward_stats" />
-    <MESSAGE value="reward change" />
     <MESSAGE value="fire range" />
     <MESSAGE value="1.names of models" />
     <MESSAGE value="4 actions \ 9 actions" />
@@ -764,7 +755,9 @@
     <MESSAGE value="no greedy 3" />
     <MESSAGE value="no greedy 4" />
     <MESSAGE value="greedy player" />
-    <option name="LAST_COMMIT_MESSAGE" value="greedy player" />
+    <MESSAGE value="removed comments" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
