@@ -105,7 +105,7 @@ class decision_maker_DQN_keras:
 
 
         parser.add_argument('--replay_memory_size', default=500000, type=int, help='Number of replay memory the agent uses for training')
-        parser.add_argument('--target_update_freq', default=10000, type=int, help='The frequency with which the target network is updated')
+        parser.add_argument('--target_update_freq', default=5000, type=int, help='The frequency with which the target network is updated')
         parser.add_argument('--train_freq', default=1, type=int, help='The frequency of actions wrt Q-network update')
         parser.add_argument('--save_freq', default=50000, type=int, help='The frequency with which the network is saved')
         parser.add_argument('--eval_freq', default=50000, type=int, help='The frequency with which the policy is evlauted')
@@ -268,54 +268,10 @@ class decision_maker_DQN_keras:
                         context = Flatten(name="flatten")(h3)
 
 
-                # else:
-                #     print('>>>> Defining Recurrent Modules...')
-                #     input_data_expanded = Reshape((input_shape[0], input_shape[1], input_shape[2], 1),
-                #                                   input_shape=input_shape)(input_data)
-                #     input_data_TimeDistributed = Permute((3, 1, 2, 4), input_shape=input_shape)(input_data_expanded)
-                #     h1 = TimeDistributed(Convolution2D(32, (8, 8), strides=4, activation="relu", name="conv1"), \
-                #                          input_shape=(args.num_frames, input_shape[0], input_shape[1], 1))(
-                #         input_data_TimeDistributed)
-                #     h2 = TimeDistributed(Convolution2D(64, (4, 4), strides=2, activation="relu", name="conv2"))(h1)
-                #     h3 = TimeDistributed(Convolution2D(64, (2, 2), strides=1, activation="relu", name="conv3"))(h2)
-                #     flatten_hidden = TimeDistributed(Flatten())(h3)
-                #     hidden_input = TimeDistributed(Dense(512, activation='relu', name='flat_to_512'))(flatten_hidden)
-                #     if not (args.a_t):
-                #         context = LSTM(512, return_sequences=False, stateful=False, input_shape=(args.num_frames, 512))(
-                #             hidden_input)
-                #     else:
-                #         if args.bidir:
-                #             hidden_input = Bidirectional(
-                #                 LSTM(512, return_sequences=True, stateful=False, input_shape=(args.num_frames, 512)),
-                #                 merge_mode='sum')(hidden_input)
-                #             all_outs = Bidirectional(
-                #                 LSTM(512, return_sequences=True, stateful=False, input_shape=(args.num_frames, 512)),
-                #                 merge_mode='sum')(hidden_input)
-                #         else:
-                #             all_outs = LSTM(512, return_sequences=True, stateful=False,
-                #                             input_shape=(args.num_frames, 512))(hidden_input)
-                #         # attention
-                #         attention = TimeDistributed(Dense(1, activation='tanh'))(all_outs)
-                #         # print(attention.shape)
-                #         attention = Flatten()(attention)
-                #         attention = Activation('softmax')(attention)
-                #         attention = RepeatVector(512)(attention)
-                #         attention = Permute([2, 1])(attention)
-                #         sent_representation = merge([all_outs, attention], mode='mul')
-                #         context = Lambda(lambda xin: K.sum(xin, axis=-2), output_shape=(512,))(sent_representation)
-                #         # print(context.shape)
-
                 if mode == "dqn":
                     h4 = Dense(512, activation='elu', name="fc")(context)
                     output = Dense(num_actions, name="output")(h4)
-                # elif mode == "duel":
-                #     value_hidden = Dense(512, activation='relu', name='value_fc')(context)
-                #     value = Dense(1, name="value")(value_hidden)
-                #     action_hidden = Dense(512, activation='relu', name='action_fc')(context)
-                #     action = Dense(num_actions, name="action")(action_hidden)
-                #     action_mean = Lambda(lambda x: tf.reduce_mean(x, axis=1, keep_dims=True), name='action_mean')(
-                #         action)
-                #     output = Lambda(lambda x: x[0] + x[1] - x[2], name='output')([action, value, action_mean])
+
         model = Model(inputs=input_data, outputs=output)
         print(model.summary())
         return model
@@ -487,8 +443,6 @@ class decision_maker_DQN_keras:
         #     self.memory.append(new_state, action, CONST_LAST_FRAME_REWARD, new_state, is_terminal)
         #     self.atari_processor.reset()
         #     self.history_processor.reset()
-
-
 
     def _get_action(self, current_state, evaluate=False, **kwargs):
         dqn_state = current_state.img

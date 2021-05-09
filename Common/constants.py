@@ -27,13 +27,13 @@ FIRE_RANGE_FLAG = True
 IMG_STATE_MODE = 'L' #'P'
 CLOSE_START_POSITION = True
 
-FULLY_CONNECTED = True
+FULLY_CONNECTED = False
 NUM_FRAMES = 1
-STR_FOLDER_NAME = "15X15_FC"#"Berlin_right_action"#"15X15_1_frames_two_array_state_no_red_when_win"#"Berlin_eval"#"Berlin_BB" #"15X15_baselines"
+STR_FOLDER_NAME = "Berlin_fixed_state"#"Berlin_right_action"#"15X15_1_frames_two_array_state_no_red_when_win"#"Berlin_eval"#"Berlin_BB" #"15X15_baselines"
 
 #1 is an obstacle
 DSM_names = {"15X15", "100X100_Berlin", "100X100_Paris", "100X100_Boston"}
-DSM_name = "15X15"#"100X100_Berlin"
+DSM_name = "100X100_Berlin" #"15X15"
 
 COMMON_PATH = path.dirname(path.realpath(__file__))
 MAIN_PATH = path.dirname(COMMON_PATH)
@@ -79,10 +79,6 @@ if DSM_name=="15X15":
             print("all_pairs_distances loaded")
 
 elif DSM_name=="100X100_Berlin":
-    # BERLIN_DSM_PATH_1 = path.join(MAIN_PATH, 'Common')
-    # BERLIN_DSM_PATH_2 = path.join(BERLIN_DSM_PATH_1, 'maps')
-    # BERLIN_DSM_PATH_3 = path.join(BERLIN_DSM_PATH_2, 'Berlin')
-    # BERLIN_DSM_PATH_4 = path.join(BERLIN_DSM_PATH_3, 'berlin_100_0_1_inflated.png')
     DSM = get_DSM_berlin()
     SIZE_X=100
     SIZE_Y=100
@@ -233,8 +229,6 @@ if USE_OLD_COLORS:
 
 
 
-
-
 if ACTION_SPACE_9:
     NUMBER_OF_ACTIONS = 9
     class AgentAction(IntEnum):
@@ -284,7 +278,7 @@ EVALUATE_NUM_OF_EPISODES = 100
 EVALUATE_SAVE_STATS_EVERY = 100
 
 EVALUATE_PLAYERS_EVERY = 1000
-EVALUATE_BATCH_SIZE=100
+EVALUATE_BATCH_SIZE=20
 
 #save information
 USE_DISPLAY = True
