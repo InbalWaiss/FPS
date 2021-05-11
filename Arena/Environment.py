@@ -199,11 +199,24 @@ class Environment(object):
             return win_status
 
         if FIRE_RANGE_FLAG:
-            dist = np.linalg.norm(np.array([first_player.x, first_player.y]) - np.array([second_player.x, second_player.y]))
-            if dist>FIRE_RANGE:
-                win_status = WinEnum.NoWin
-                self.win_status = win_status
-                return win_status
+            dist = np.linalg.norm(
+                np.array([first_player.x, first_player.y]) - np.array([second_player.x, second_player.y]))
+
+            if NONEDETERMINISTIC_TERMINAL_STATE:
+                p = 1/dist
+                r = np.random.rand()
+                if r > p:
+                    # No kill
+                    win_status = WinEnum.NoWin
+                    self.win_status = win_status
+                    return win_status
+                #else: kill
+
+            else:
+                if dist>FIRE_RANGE:
+                    win_status = WinEnum.NoWin
+                    self.win_status = win_status
+                    return win_status
 
         if whos_turn == Color.Blue:
             win_status = WinEnum.Blue
@@ -216,52 +229,6 @@ class Environment(object):
         self.win_status = win_status
         return win_status
 
-
-    def compute_terminal_with_escape(self) -> WinEnum:
-        """dominating point is defined to be a point that:
-         1. has LOS to the dominated_point
-         2. there IS an action that executing it will end in a point that have no LOS to the second_player
-         3. there is NO action for the second_player to take that will end in no LOS to the first_player
-
-         The function will return True if the first player is dominating the second player
-         False otherwise"""
-
-        first_player = self.blue_player
-        second_player = self.red_player
-        win_status = WinEnum.NoWin
-
-
-        is_los = (second_player.x, second_player.y) in DICT_POS_FIRE_RANGE[(first_player.x, first_player.y)]
-
-        if not is_los:  # no LOS
-            win_status = WinEnum.NoWin
-            self.win_status = win_status
-            return win_status
-
-        if FIRE_RANGE_FLAG:
-            dist = np.linalg.norm(np.array([first_player.x, first_player.y]) - np.array([second_player.x, second_player.y]))
-            if dist>FIRE_RANGE:
-                win_status = WinEnum.NoWin
-                self.win_status = win_status
-                return win_status
-
-        can_first_escape_second, _ = can_escape(first_player, second_player)
-        can_second_escape_first, _ = can_escape(second_player, first_player)
-
-        if can_first_escape_second and not can_second_escape_first:
-            win_status = WinEnum.Blue
-            self.end_game_flag=True
-
-        elif can_second_escape_first and not can_first_escape_second:
-            win_status = WinEnum.Red
-            self.end_game_flag = True
-
-        else:
-            win_status = WinEnum.Tie
-            self.end_game_flag = True
-
-        self.win_status = win_status
-        return win_status
 
 
     def get_observation_for_blue(self)-> State:

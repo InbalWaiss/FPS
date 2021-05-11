@@ -248,8 +248,15 @@ def print_episode_graphics(env: Environment, episode, last_step_number, write_fi
         if DANGER_ZONE_IN_STATE:
             points_in_enemy_los = DICT_POS_FIRE_RANGE[(red.x, red.y)]
             for point in points_in_enemy_los:
+                color = dict_of_colors_for_graphics[RED_N]
+                if NONEDETERMINISTIC_TERMINAL_STATE:
+                    dist = np.linalg.norm(np.array(point) - np.array([red.x, red.y]))
+                    dist_floor = np.floor(dist)
+                    enemy_color = dict_of_colors_for_graphics[RED_N]
+                    color = tuple(map(lambda i, j: int(i - j), enemy_color, (0, 0, 15 * dist_floor)))
                 informative_env[(point[0] + margin_x) * const: (point[0] + margin_x) * const + const,
-                (point[1] + margin_y) * const: (point[1] + margin_y) * const + const] = dict_of_colors_for_graphics[BRIGHT_RED]
+                (point[1] + margin_y) * const: (point[1] + margin_y) * const + const] = color
+
 
 
         # set the players as circles
@@ -332,17 +339,47 @@ def print_episode_graphics(env: Environment, episode, last_step_number, write_fi
         start_y = np.max([0,blue.y - FIRE_RANGE - BB_MARGIN])
         end_y = np.min([blue.y + FIRE_RANGE + BB_MARGIN+1, SIZE_Y])
         informative_env[(start_x + margin_x) * const: (end_x + margin_x) * const + const,
-        (start_y + margin_y) * const: (end_y + margin_y) * const + const] += 100
+        (start_y + margin_y) * const: (end_y + margin_y) * const + const] += 85
 
         # set the players as circles
         radius = int(np.ceil(const / 2))
         thickness = -1
         if env.win_status != WinEnum.Blue:
             # set the red player
+            if NONEDETERMINISTIC_TERMINAL_STATE:
+                if LOS_PENALTY_FLAG:
+                    points_dom_points = DICT_POS_LOS[(red.x, red.y)]
+                    for point in points_dom_points:
+                        informative_env[(point[0] + margin_x) * const: (point[0] + margin_x) * const + const,
+                        (point[1] + margin_y) * const: (point[1] + margin_y) * const + const] = dict_of_colors_for_graphics[DARK_DARK_RED_N]
+
+                if DANGER_ZONE_IN_STATE:
+                    points_in_enemy_los = DICT_POS_FIRE_RANGE[(red.x, red.y)]
+                    for point in points_in_enemy_los:
+                        color = dict_of_colors_for_graphics[RED_N]
+                        if NONEDETERMINISTIC_TERMINAL_STATE:
+                            dist = np.linalg.norm(np.array(point) - np.array([red.x, red.y]))
+                            dist_floor = np.floor(dist)
+                            enemy_color = dict_of_colors_for_graphics[RED_N]
+                            color = tuple(map(lambda i, j: int(i - j), enemy_color, (0, 0, 15 * dist_floor)))
+                        informative_env[(point[0] + margin_x) * const: (point[0] + margin_x) * const + const,
+                        (point[1] + margin_y) * const: (point[1] + margin_y) * const + const] = color
+
             center_cord_red_x = (red.x + margin_x) * const + radius
             center_cord_red_y = (red.y + margin_y) * const + radius
             red_color = dict_of_colors_for_graphics[RED_N]
             cv2.circle(informative_env, (center_cord_red_y, center_cord_red_x), radius, red_color, thickness)
+
+        informative_env[(start_x + margin_x) * const: (end_x + margin_x) * const + const,
+        (start_y + margin_y) * const: (end_y + margin_y) * const + const] += 15
+
+        if env.win_status != WinEnum.Blue:
+            center_cord_red_x = (red.x + margin_x) * const + radius
+            center_cord_red_y = (red.y + margin_y) * const + radius
+            red_color = dict_of_colors_for_graphics[RED_N]
+            cv2.circle(informative_env, (center_cord_red_y, center_cord_red_x), radius, red_color, thickness)
+
+
         if env.win_status != WinEnum.Red:
             # set the blue player
             center_cord_blue_x = (blue.x + margin_x) * const + radius
