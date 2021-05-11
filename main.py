@@ -58,7 +58,7 @@ if __name__ == '__main__':
     print("Starting Blue player")
 
     blue_decision_maker = DQNAgent_keras.DQNAgent_keras()
-    #blue_decision_maker = DQNAgent_keras.DQNAgent_keras(UPDATE_CONTEXT=True, path_model_to_load='conv1(6_6_1_64)_conv2(4_4_64_64)_conv3(3_3_64_64)_flatten_fc__blue_205001_  20.00max_  14.34avg_ -13.40min__1619413761.model')
+    #blue_decision_maker = DQNAgent_keras.DQNAgent_keras(UPDATE_CONTEXT=True, path_model_to_load='conv1(6_6_1_256)_conv2(4_4_256_128)_conv3(3_3_128_128)_flatten_fc__blue_202001_   0.95max_  -0.04avg_  -3.10min__1620558885.model')
 
     print("Starting red player")
     ### Red Decision Maker
@@ -69,8 +69,6 @@ if __name__ == '__main__':
     env.red_player = Entity(red_decision_maker)
 
     print_start_of_game_info(blue_decision_maker, red_decision_maker)
-
-    NUM_OF_EPISODES = env.NUMBER_OF_EPISODES
 
     NUM_OF_EPISODES = env.NUMBER_OF_EPISODES
     for episode in tqdm(range(1, NUM_OF_EPISODES + 1), ascii=True, unit='episodes'):
