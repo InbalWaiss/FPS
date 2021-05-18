@@ -199,42 +199,6 @@
       <option name="presentableId" value="Default" />
       <updated>1611132936949</updated>
     </task>
-    <task id="LOCAL‎00036" summary="1. not sum zero game&#10;2. flag RED_PLAYER_MOVES&#10;3. less LOS calcs">
-      <created>1614490823415</created>
-      <option name="number" value="LOCAL‎00036" />
-      <option name="presentableId" value="LOCAL‎00036" />
-      <updated>1614490823415</updated>
-    </task>
-    <task id="LOCAL‎00037" summary="save_win_statistics added">
-      <created>1614504673409</created>
-      <option name="number" value="LOCAL‎00037" />
-      <option name="presentableId" value="LOCAL‎00037" />
-      <updated>1614504673409</updated>
-    </task>
-    <task id="LOCAL‎00038" summary="dominating points added to state">
-      <created>1614605481546</created>
-      <option name="number" value="LOCAL‎00038" />
-      <option name="presentableId" value="LOCAL‎00038" />
-      <updated>1614605481546</updated>
-    </task>
-    <task id="LOCAL‎00039" summary="dominating_points pics">
-      <created>1614680929414</created>
-      <option name="number" value="LOCAL‎00039" />
-      <option name="presentableId" value="LOCAL‎00039" />
-      <updated>1614680929414</updated>
-    </task>
-    <task id="LOCAL‎00040" summary="dominating_points pics">
-      <created>1614681251785</created>
-      <option name="number" value="LOCAL‎00040" />
-      <option name="presentableId" value="LOCAL‎00040" />
-      <updated>1614681251785</updated>
-    </task>
-    <task id="LOCAL‎00041" summary="DQNkeras set_model_name">
-      <created>1614843909698</created>
-      <option name="number" value="LOCAL‎00041" />
-      <option name="presentableId" value="LOCAL‎00041" />
-      <updated>1614843909699</updated>
-    </task>
     <task id="LOCAL‎00042" summary="save_reward_stats">
       <created>1614853353211</created>
       <option name="number" value="LOCAL‎00042" />
@@ -493,7 +457,43 @@
       <option name="presentableId" value="LOCAL‎00084" />
       <updated>1621319646239</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL‎00085" summary="with checking on fixed state">
+      <created>1621319941635</created>
+      <option name="number" value="LOCAL‎00085" />
+      <option name="presentableId" value="LOCAL‎00085" />
+      <updated>1621319941635</updated>
+    </task>
+    <task id="LOCAL‎00086" summary="with checking on fixed state">
+      <created>1621319954992</created>
+      <option name="number" value="LOCAL‎00086" />
+      <option name="presentableId" value="LOCAL‎00086" />
+      <updated>1621319954992</updated>
+    </task>
+    <task id="LOCAL‎00087" summary="with checking on fixed state">
+      <created>1621319990785</created>
+      <option name="number" value="LOCAL‎00087" />
+      <option name="presentableId" value="LOCAL‎00087" />
+      <updated>1621319990785</updated>
+    </task>
+    <task id="LOCAL‎00088" summary="with checking on fixed state">
+      <created>1621320145093</created>
+      <option name="number" value="LOCAL‎00088" />
+      <option name="presentableId" value="LOCAL‎00088" />
+      <updated>1621320145093</updated>
+    </task>
+    <task id="LOCAL‎00089" summary="with checking on fixed state">
+      <created>1621320227804</created>
+      <option name="number" value="LOCAL‎00089" />
+      <option name="presentableId" value="LOCAL‎00089" />
+      <updated>1621320227804</updated>
+    </task>
+    <task id="LOCAL‎00090" summary="with checking on fixed state">
+      <created>1621320526249</created>
+      <option name="number" value="LOCAL‎00090" />
+      <option name="presentableId" value="LOCAL‎00090" />
+      <updated>1621320526249</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
