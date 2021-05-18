@@ -26,7 +26,13 @@ class State(object):
             if DANGER_ZONE_IN_STATE:
                 points_in_enemy_los = DICT_POS_FIRE_RANGE[(self.enemy_pos._x, self.enemy_pos._y)]
                 for point in points_in_enemy_los:
-                    env[point[0]][point[1]] = dict_of_colors_for_state[DARK_RED_N]
+                    color = dict_of_colors_for_state[RED_N]
+                    if NONEDETERMINISTIC_TERMINAL_STATE:
+                        dist = np.linalg.norm(np.array(point) - np.array([self.enemy_pos._x, self.enemy_pos._y]))
+                        dist_floor = np.floor(dist)
+                        enemy_color = dict_of_colors_for_state[RED_N]
+                        color = tuple(map(lambda i, j: int(i - j), enemy_color, (15 * dist_floor, 0, 0)))
+                    env[point[0]][point[1]] = color  # dict_of_colors_for_state[DARK_RED_N]
 
 
             env[self.enemy_pos._x][self.enemy_pos._y] = dict_of_colors_for_state[RED_N]

@@ -21,6 +21,7 @@ from DQN.deeprl_prj.objectives import *
 from DQN.deeprl_prj.preprocessors import *
 from DQN.deeprl_prj.utils import *
 from DQN.deeprl_prj.core import  *
+from DQN.fixed_state_berlin import fixed_state_berlin
 
 config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
@@ -70,11 +71,7 @@ class decision_maker_DQN_keras:
 
         self.MODEL_NAME = self.set_model_name()
 
-        # save_folder_path = path.join(STATS_RESULTS_RELATIVE_PATH,
-        #                              format(f"{str(time.strftime('%d'))}_{str(time.strftime('%m'))}_"
-        #                                     f"{str(time.strftime('%H'))}_{str(time.strftime('%M'))}"))
-        #
-        # self.writer = tf.summary.FileWriter(save_folder_path)
+        self.Berlin_fixed_state = fixed_state_berlin()
 
 
     def get_args(self):
@@ -362,6 +359,9 @@ class decision_maker_DQN_keras:
                 # here we use hard target update as default
                 self.target_network.set_weights(self.q_network.get_weights())
 
+                #####
+                self.save_fixed_berlin_state(SAVE=False)
+
 
 
         self._previous_stats = new_state
@@ -433,7 +433,15 @@ class decision_maker_DQN_keras:
             next_qa_value = np.max(next_qa_value, axis = 1)
         target = rewards + self.gamma * mask * next_qa_value
 
+        if False:
+            idx = 18
+            plt.matshow(states[idx])
+            plt.matshow(next_states[idx])
+            m = mask[idx]
+            r = rewards[idx]
+
         return self.final_model.train_on_batch([states, action_mask], target), np.mean(target)
+
 
     # adds step's data to memory replay array
     # (state, action, reward, new_state, is_terminal)
@@ -482,6 +490,17 @@ class decision_maker_DQN_keras:
                 self._epsilon = 0
 
         return action
+
+
+    def save_fixed_berlin_state(self, SAVE=False, save_folder_path=None):
+        if DSM_name is not "100X100_Berlin":
+            return
+        s_a_s = np.stack([self.Berlin_fixed_state.fixed_state])
+
+        qss = self.q_network.predict(s_a_s)
+
+        self.Berlin_fixed_state.fllow_states(qss, SAVE=False, save_folder_path=save_folder_path)
+
 
     def print_model(self, state, episode_number, path_to_dir):
         from keras import backend as K
@@ -608,4 +627,5 @@ class DQNAgent_keras:
         self._decision_maker.q_network.save(
             f'{path_to_model+os.sep+self._decision_maker.MODEL_NAME}_{color_str}_{episode}_{max_reward: >7.2f}max_{avg_reward: >7.2f}avg_{min_reward: >7.2f}min__{int(time.time())}.model')
 
+        self._decision_maker.save_fixed_berlin_state(SAVE=True, save_folder_path=path_to_model)
         return self.min_reward

@@ -19,21 +19,23 @@ if not ACTION_SPACE_9:
 RED_PLAYER_MOVES = True
 FIXED_START_POINT_RED = False
 FIXED_START_POINT_BLUE = False
-TAKE_WINNING_STEP_BLUE = False # True
+TAKE_WINNING_STEP_BLUE = True
 
 FIRE_RANGE_FLAG = True
+
+NONEDETERMINISTIC_TERMINAL_STATE = True
 
 #image state mode
 IMG_STATE_MODE = 'L' #'P'
 CLOSE_START_POSITION = True
 
-FULLY_CONNECTED = False
+FULLY_CONNECTED = True
 NUM_FRAMES = 1
-STR_FOLDER_NAME = "Berlin_fixed_state"#"Berlin_right_action"#"15X15_1_frames_two_array_state_no_red_when_win"#"Berlin_eval"#"Berlin_BB" #"15X15_baselines"
+STR_FOLDER_NAME = "Berlin_NONEDETERMINISTIC_TERMINAL_STATE"#"Berlin_right_action"#"15X15_1_frames_two_array_state_no_red_when_win"#"Berlin_eval"#"Berlin_BB" #"15X15_baselines"
 
 #1 is an obstacle
 DSM_names = {"15X15", "100X100_Berlin", "100X100_Paris", "100X100_Boston"}
-DSM_name = "100X100_Berlin" #"15X15"
+DSM_name =  "15X15"#"100X100_Berlin" #
 
 COMMON_PATH = path.dirname(path.realpath(__file__))
 MAIN_PATH = path.dirname(COMMON_PATH)
