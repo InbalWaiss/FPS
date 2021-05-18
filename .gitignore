@@ -4,3 +4,6 @@
 /Arena/logs/
 /venv/
 /Arena/statistics/
+/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/conv1(6_6_1_256)_conv2(4_4_256_128)_conv3(3_3_128_128)_flatten_fc__blue_333301_   1.00max_  -0.18avg_  -2.70min__1620703248.model
+/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/conv1(6_6_1_256)_conv2(4_4_256_128)_conv3(3_3_128_128)_flatten_fc__blue_343401_   0.90max_  -0.64avg_  -2.45min__1620720205.model
+/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/flatten_FC1-elu_FC2-elu_FC3-elu_FC4-elu__blue_767601_   1.00max_   0.08avg_  -2.10min__1620718196.model
