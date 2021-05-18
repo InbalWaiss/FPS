@@ -2,33 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19617cd5-27af-4f97-9b0e-ec6f2ed2f11c" name="Default Changelist" comment="no greedy 4">
-      <change afterPath="$PROJECT_DIR$/Qtable/trained_agents/conv1(6_6_1_256)_conv2(4_4_256_128)_conv3(3_3_128_128)_flatten_fc__blue_202001_   0.95max_  -0.04avg_  -3.10min__1620558885.model" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics324000_conv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics324000_conv_w.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics728000_FC.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics728000_FC_w.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DQN/fixed_state_berlin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/#steps_333300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/Statistics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/evaluation_statistics334000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/reward_statistics333301.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/rewards_BLUE333300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_03_20_DQN_keras_Greedy_player_Berlin_conv_winning_step/win_statistics333300.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/#steps_767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/Statistics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/evaluation_statistics768000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/reward_statistics767601.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/rewards_BLUE767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_07_29_DQN_keras_Greedy_player_Berlin_FC_winning_step/win_statistics767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/#steps_343400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/Statistics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/evaluation_statistics344000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/reward_statistics343401.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/rewards_BLUE343400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_02_DQN_keras_Greedy_player_Berlin_conv/win_statistics343400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/#steps_767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/Statistics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/evaluation_statistics768000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/flatten_FC1-elu_FC2-elu_FC3-elu_FC4-elu__blue_767601_   0.95max_  -0.28avg_  -1.80min__1620720347.model" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/reward_statistics767601.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/rewards_BLUE767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/11_05_08_05_DQN_keras_Greedy_player_Berlin_FC/win_statistics767600.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/evaluation_statistics334000_conv_w.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/evaluation_statistics344000_conv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/evaluation_statistics768000_FC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/new folder/evaluation_statistics768000_FC_w.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/CState.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arena/CState.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/Environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arena/Environment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arena/graphics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_07_58_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_2021_   1.00max_  -0.59avg_  -1.75min__1620536306.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_08_11_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_4041_   1.00max_  -0.78avg_  -1.65min__1620537060.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_08_23_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_6061_   1.00max_  -0.80avg_  -1.60min__1620537811.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_08_34_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_8081_   1.00max_  -0.60avg_  -1.75min__1620538472.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_08_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_10101_   0.90max_  -0.83avg_  -1.50min__1620539138.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_08_56_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_12121_   1.00max_  -0.72avg_  -1.70min__1620539774.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_06_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_14141_   1.00max_  -0.76avg_  -1.65min__1620540363.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_15_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_16161_   1.00max_  -0.68avg_  -1.60min__1620540951.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_25_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_18181_   1.00max_  -0.76avg_  -1.90min__1620541553.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_35_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_20201_   1.00max_  -0.86avg_  -1.60min__1620542155.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_45_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_22221_   1.00max_  -0.80avg_  -1.55min__1620542755.model" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Arena/statistics/09_05_09_55_DQN_keras_Greedy_player_15X15_with_LOS_conv/conv2(4_4_1_64)_conv3(3_3_64_64)_flatten_fc__blue_24241_   1.00max_  -0.79avg_  -1.50min__1620543341.model" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Common/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DQN/DQNAgent_keras.py" beforeDir="false" afterPath="$PROJECT_DIR$/DQN/DQNAgent_keras.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Greedy/all_pairs_shortest_path_15X15_7.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/all_pairs_shortest_path_15X15_7.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Greedy/closest_target_dict_100X100_Berlin_10.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/closest_target_dict_100X100_Berlin_10.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Greedy/closest_target_dict_15X15_7.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/closest_target_dict_15X15_7.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,18 +235,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611132936949</updated>
-    </task>
-    <task id="LOCAL‎00033" summary="win_array added">
-      <created>1614256944984</created>
-      <option name="number" value="LOCAL‎00033" />
-      <option name="presentableId" value="LOCAL‎00033" />
-      <updated>1614256944984</updated>
-    </task>
-    <task id="LOCAL‎00034" summary="win_array added">
-      <created>1614276186398</created>
-      <option name="number" value="LOCAL‎00034" />
-      <option name="presentableId" value="LOCAL‎00034" />
-      <updated>1614276186398</updated>
     </task>
     <task id="LOCAL‎00035" summary="use danger zone in state">
       <created>1614490240886</created>
@@ -521,7 +518,19 @@
       <option name="presentableId" value="LOCAL‎00081" />
       <updated>1620709151256</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL‎00082" summary="with checking on fixed state">
+      <created>1620709431469</created>
+      <option name="number" value="LOCAL‎00082" />
+      <option name="presentableId" value="LOCAL‎00082" />
+      <updated>1620709431469</updated>
+    </task>
+    <task id="LOCAL‎00083" summary="with checking on fixed state">
+      <created>1620711852422</created>
+      <option name="number" value="LOCAL‎00083" />
+      <option name="presentableId" value="LOCAL‎00083" />
+      <updated>1620711852422</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +570,6 @@
       <path value="$PROJECT_DIR$" />
       <path value="$PROJECT_DIR$/SingleAgentCombat-main" />
     </ignored-roots>
-    <MESSAGE value="1.names of models" />
     <MESSAGE value="4 actions \ 9 actions" />
     <MESSAGE value="more flags" />
     <MESSAGE value="&quot;&quot;" />
@@ -586,7 +594,8 @@
     <MESSAGE value="removed comments" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="data for greedy" />
-    <option name="LAST_COMMIT_MESSAGE" value="data for greedy" />
+    <MESSAGE value="with checking on fixed state" />
+    <option name="LAST_COMMIT_MESSAGE" value="with checking on fixed state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
