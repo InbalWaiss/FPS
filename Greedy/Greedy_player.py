@@ -182,6 +182,10 @@ class Greedy_player(AbsDecisionMaker):
 
     def find_closest_point_in_enemy_LOS(self, my_pos, enemy_pos):
         # all potential targets
+        dist_pos_enemy = np.linalg.norm(np.array(my_pos) - np.array(enemy_pos))
+        if dist_pos_enemy<=FIRE_RANGE:
+            return enemy_pos
+
         points_in_enemy_los = DICT_POS_FIRE_RANGE[enemy_pos]
 
         # find closest point in enemy line of sight

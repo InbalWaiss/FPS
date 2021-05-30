@@ -7,6 +7,7 @@ from Arena.Position import Position
 from Arena.graphics import print_stats, print_episode_graphics, save_win_statistics, save_reward_stats, save_evaluation_data
 from Arena.helper_funcs import *
 from Common.constants import *
+from Arena.evaluation import Evaluation
 
 import numpy as np
 from PIL import Image
@@ -54,6 +55,7 @@ class Environment(object):
         self.blue_epsilon_values = []
         self.blue_epsilon_values.append(1)
 
+        self.evaluation = Evaluation()
         # data for evaluation
         self.evaluation__number_of_steps_batch = []
         self.evaluation__win_array_batch = []
@@ -92,12 +94,20 @@ class Environment(object):
                 legal_start_points = not is_los
 
         if FIXED_START_POINT_RED:
-            self.red_player.x = 10
-            self.red_player.y = 3
+            if DSM_name=="15X15":
+                self.red_player.x = 10
+                self.red_player.y = 3
+            elif DSM_name=="100X100_Berlin":
+                self.red_player.x = 48
+                self.red_player.y = 70
 
         if FIXED_START_POINT_BLUE:
-            self.blue_player.x = 3
-            self.blue_player.y = 10
+            if DSM_name == "15X15":
+                self.blue_player.x = 3
+                self.blue_player.y = 10
+            elif DSM_name == "100X100_Berlin":
+                self.blue_player.x = 61
+                self.blue_player.y = 72
 
 
         if self.SHOW_EVERY==1 or episode_number % (self.SHOW_EVERY-1) == 0:
@@ -203,6 +213,7 @@ class Environment(object):
                 np.array([first_player.x, first_player.y]) - np.array([second_player.x, second_player.y]))
 
             if NONEDETERMINISTIC_TERMINAL_STATE:
+                dist = np.max([dist, 1])
                 p = 1/dist
                 r = np.random.rand()
                 if r > p:
@@ -387,6 +398,8 @@ class Environment(object):
 
     def evaluate_info(self, EVALUATE_FLAG, episode_number, steps_current_game, blue_epsilon):
 
+        #win_status
+
         if episode_number % EVALUATE_PLAYERS_EVERY==EVALUATE_BATCH_SIZE:
             self.evaluation__number_of_steps.append(np.mean(self.evaluation__number_of_steps_batch))
             self.evaluation__rewards_for_blue.append(np.mean(self.evaluation__rewards_for_blue_batch))
@@ -416,8 +429,6 @@ class Environment(object):
             self.evaluation__epsilon_value_batch.append(blue_epsilon)
 
         return
-
-
 
 
 
@@ -457,25 +468,6 @@ class Environment(object):
 
         if not os.path.exists(save_folder_path):
             os.makedirs(save_folder_path)
-
-        chcek_unvisited_states = False
-        counter_ones = 0
-        num_of_states = 15 * 15 * 15 * 15
-        if self.red_player._decision_maker.type() == AgentType.Q_table:
-            Q_matrix = self.red_player._decision_maker._Q_matrix
-            chcek_unvisited_states = True
-        elif self.blue_player._decision_maker.type() == AgentType.Q_table:
-            Q_matrix = self.blue_player._decision_maker._Q_matrix
-            chcek_unvisited_states = True
-        if chcek_unvisited_states:
-            num_of_states = 15 * 15 * 15 * 15
-            block_states = np.sum(DSM)
-            for x1 in range(SIZE_Y):
-                for y1 in range(SIZE_Y):
-                    for x2 in range(SIZE_Y):
-                        for y2 in range(SIZE_Y):
-                            if list(Q_matrix[(x1, y1), (x2, y2)]) == list(np.ones(NUMBER_OF_ACTIONS)):
-                                counter_ones += 1
 
 
         info = {f"NUM_OF_EPISODES": [NUM_OF_EPISODES],
@@ -558,19 +550,6 @@ class Episode():
             print(f"epsilon (blue player) is {blue_epsilon}")
             print(f"number of steps: {steps_current_game}")
             # print(f"mean number of steps of last {number_of_episodes} episodes: , {np.mean(env.steps_per_episode[-env.SHOW_EVERY:])}")
-
-            # print(f"mean rewards of last {number_of_episodes} episodes for blue player: {np.mean(env.episodes_rewards_blue[-env.SHOW_EVERY:])}")
-            #
-            # win_array = np.array(env.win_array[-env.SHOW_EVERY:])
-            # blue_win_per_for_last_games = np.sum(win_array==WinEnum.Blue) / number_of_episodes * 100
-            # red_win_per_for_last_games = np.sum(win_array == WinEnum.Red) / number_of_episodes * 100
-            # ties_LOS = np.sum(win_array==WinEnum.Tie) / number_of_episodes * 100
-            # ties_num_of_steps = np.sum(win_array == WinEnum.NoWin) / number_of_episodes * 100
-            #
-            #
-            # print(f"in the last {number_of_episodes} episodes, BLUE won: {blue_win_per_for_last_games}%, RED won {red_win_per_for_last_games}%, ended in TIE do to LOS: {ties_LOS}%, ended in TIE do to steps: {ties_num_of_steps}% of games")
-            #
-            # print(f"mean rewards of all episodes for blue player: {np.mean(env.episodes_rewards_blue)}\n")
 
             self.print_episode(env, steps_current_game)
 

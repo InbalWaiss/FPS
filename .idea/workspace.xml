@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19617cd5-27af-4f97-9b0e-ec6f2ed2f11c" name="Default Changelist" comment="no greedy 4" />
+    <list default="true" id="19617cd5-27af-4f97-9b0e-ec6f2ed2f11c" name="Default Changelist" comment="no greedy 4">
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/#steps_1959400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/Statistics.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/evaluation_statistics1960000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/reward_statistics1959401.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/rewards_BLUE1959400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/16_05_05_45_DQN_keras_Greedy_player_Berlin_FC_winning_step/win_statistics1959400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics152000.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/evaluation_statistics/New folder/evaluation_statistics819000_conv.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Arena/Environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Arena/Environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Greedy/all_pairs_shortest_path_15X15_7.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/all_pairs_shortest_path_15X15_7.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Greedy/closest_target_dict_100X100_Berlin_10.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/closest_target_dict_100X100_Berlin_10.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Greedy/closest_target_dict_15X15_7.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy/closest_target_dict_15X15_7.pkl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,11 +188,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.constants (1)" />
       <item itemvalue="Python.graphics" />
+      <item itemvalue="Python.main" />
       <item itemvalue="Python.main_only_blue (1)" />
       <item itemvalue="Python.main_only_blue" />
-      <item itemvalue="Python.main" />
-      <item itemvalue="Python.constants (1)" />
     </list>
     <recent_temporary>
       <list>
@@ -198,12 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611132936949</updated>
-    </task>
-    <task id="LOCAL‎00042" summary="save_reward_stats">
-      <created>1614853353211</created>
-      <option name="number" value="LOCAL‎00042" />
-      <option name="presentableId" value="LOCAL‎00042" />
-      <updated>1614853353211</updated>
     </task>
     <task id="LOCAL‎00043" summary="reward change">
       <created>1614860904298</created>
@@ -493,7 +501,13 @@
       <option name="presentableId" value="LOCAL‎00090" />
       <updated>1621320526249</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL‎00091" summary="with checking on fixed state">
+      <created>1621321196482</created>
+      <option name="number" value="LOCAL‎00091" />
+      <option name="presentableId" value="LOCAL‎00091" />
+      <updated>1621321196482</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
