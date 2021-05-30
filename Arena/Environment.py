@@ -193,6 +193,7 @@ class Environment(object):
         return reward_step_blue, reward_step_red
 
 
+
     def compute_terminal(self, whos_turn=None)-> WinEnum:
         first_player = self.blue_player
         second_player = self.red_player
@@ -212,18 +213,33 @@ class Environment(object):
             dist = np.linalg.norm(
                 np.array([first_player.x, first_player.y]) - np.array([second_player.x, second_player.y]))
 
+
             if NONEDETERMINISTIC_TERMINAL_STATE:
                 dist = np.max([dist, 1])
                 p = 1/dist
                 r = np.random.rand()
-                if r > p:
-                    # No kill
-                    win_status = WinEnum.NoWin
-                    self.win_status = win_status
-                    return win_status
-                #else: kill
+                if r<=p: # blue takes a shoot
+                    # Blue won!
+                    self.end_game_flag = True
+                    self.win_status = WinEnum.Blue
+                    return self.win_status
 
-            else:
+                else: # red takes a shoot
+                    p = 0.5
+                    r = np.random.rand()
+                    if r<=p:
+                        # Red won!
+                        self.end_game_flag = True
+                        self.win_status = WinEnum.Red
+                        return self.win_status
+
+                    else:
+                        # No kill
+                        win_status = WinEnum.NoWin
+                        self.win_status = win_status
+                        return win_status
+
+            else: #DETERMINISTIC_TERMINAL_STATE
                 if dist>FIRE_RANGE:
                     win_status = WinEnum.NoWin
                     self.win_status = win_status
