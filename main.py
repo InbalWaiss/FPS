@@ -1,5 +1,3 @@
-
-
 from matplotlib import style
 from tqdm import tqdm
 
@@ -9,8 +7,9 @@ from Arena.Entity import Entity
 from Arena.Environment import Environment, Episode
 from Common.constants import *
 from Qtable import Qtable_DecisionMaker
-from DQN import DQNAgent_keras
+#from DQN import DQNAgent_keras
 from Greedy import Greedy_player
+from Greedy import smart_player
 import matplotlib.pyplot as plt
 
 def print_start_of_game_info(blue_decision_maker, red_decision_maker):
@@ -57,7 +56,7 @@ if __name__ == '__main__':
 
     print("Starting Blue player")
 
-    blue_decision_maker = DQNAgent_keras.DQNAgent_keras()
+    blue_decision_maker = smart_player.SmartPlayer() #DQNAgent_keras.DQNAgent_keras()
     #blue_decision_maker = DQNAgent_keras.DQNAgent_keras(UPDATE_CONTEXT=True, path_model_to_load='conv1(6_6_1_256)_conv2(4_4_256_128)_conv3(3_3_128_128)_flatten_fc__blue_202001_   0.95max_  -0.04avg_  -3.10min__1620558885.model')
 
     print("Starting red player")
@@ -70,7 +69,7 @@ if __name__ == '__main__':
 
     print_start_of_game_info(blue_decision_maker, red_decision_maker)
 
-    NUM_OF_EPISODES = env.NUMBER_OF_EPISODES
+    NUM_OF_EPISODES = EVALUATE_NUM_OF_EPISODES# env.NUMBER_OF_EPISODES
     for episode in tqdm(range(1, NUM_OF_EPISODES + 1), ascii=True, unit='episodes'):
 
         EVALUATE = evaluate(episode)
@@ -147,5 +146,7 @@ if __name__ == '__main__':
     env.end_run()
     if blue_decision_maker.type() == AgentType.DQN_keras or blue_decision_maker.type() == AgentType.DQN_basic:
         blue_decision_maker._decision_maker.print_model(observation_for_blue_s0, episode, env.save_folder_path)
+
+    a=1
 
 
