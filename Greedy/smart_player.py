@@ -10,6 +10,7 @@ import cv2 as cv
 import Greedy.visualizer as vis
 from Greedy.solver import Solver
 import Greedy.mapper as mapper
+import Greedy.smart_player_map as spm
 
 
 PRINT_FLAG = False
@@ -136,24 +137,29 @@ class SmartPlayer(AbsDecisionMaker):
         im = state.get_image()
         im[im[:, :, 0] != im[:, :, 1]] = 0
         im[im[:, :, 2] != im[:, :, 1]] = 0
-        plt.rcParams["axes.grid"] = False
-        im_3d = np.tile(im[:,:,0], (future_length,1,1))
+        my_path = spm.plan_path(im[:,:,0], my_pos, enemy_pos, future_length)
+        direc = np.asarray(my_path[1][:2]) - my_pos
+        self._action = self.get_action_9_actions(direc[0], direc[1])
 
-        stages = [255, 240, 225, 210, 195, 165,150]
-        assert(future_length <= len(stages))
+        if False: ## old code:
+            plt.rcParams["axes.grid"] = False
+            im_3d = np.tile(im[:,:,0], (future_length,1,1))
 
-        im = state.get_image()[:,:,0]
-        for i in range(future_length):
-            im_3d[i,:,:][im >= stages[i]] = stages[i]
+            stages = [255, 240, 225, 210, 195, 165,150]
+            assert(future_length <= len(stages))
 
-        #vis.show_3d_as_strip(im_3d.transpose())
-        my_loc = state.my_pos.get_tuple()
-        my_loc = [my_loc[1],my_loc[0]]
-        good_hide = (11,6)
-        solver = Solver()
-        path_3d = solver.find_shortest_path_3d(im_3d.transpose(), my_loc, good_hide)
-        im_3d_embeded = mapper.embed_path_in_3d_map(im_3d.transpose(),path_3d,0,70)
-        vis.show_3d_as_strip(im_3d_embeded)
+            im = state.get_image()[:,:,0]
+            for i in range(future_length):
+                im_3d[i,:,:][im >= stages[i]] = stages[i]
+
+            vis.show_3d_as_strip(im_3d.transpose())
+            my_loc = state.my_pos.get_tuple()
+            my_loc = [my_loc[1],my_loc[0]]
+            good_hide = (11,6)
+            solver = Solver()
+            path_3d = solver.find_shortest_path_3d(im_3d.transpose(), my_loc, good_hide)
+            im_3d_embeded = mapper.embed_path_in_3d_map(im_3d.transpose(),path_3d,0,70)
+            vis.show_3d_as_strip(im_3d_embeded)
 
         return self._action
 
