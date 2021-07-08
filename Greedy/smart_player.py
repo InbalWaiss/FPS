@@ -135,11 +135,32 @@ class SmartPlayer(AbsDecisionMaker):
         my_pos = state.my_pos.get_tuple()
         enemy_pos = state.enemy_pos.get_tuple()
         im = state.get_image()
-        im[im[:, :, 0] != im[:, :, 1]] = 0
-        im[im[:, :, 2] != im[:, :, 1]] = 0
-        my_path = spm.plan_path(im[:,:,0], my_pos, enemy_pos, future_length)
-        direc = np.asarray(my_path[1][:2]) - my_pos
-        self._action = self.get_action_9_actions(direc[0], direc[1])
+        fire = im[:, :, 0] > im[:, :, 1] + 50
+        # maybe fire is near and we can win:
+        if fire[my_pos[0]-1:my_pos[0]+1, my_pos[1]-1:my_pos[1]+1].any():
+            for i in range(-1, 2):
+                broke = False
+                for j in range(-1, 2):
+                    loc = [my_pos[0]+i, my_pos[1]+j]
+                    if fire[loc[0], loc[1]]:
+                        self._action = self.get_action_9_actions(i, j)
+                        broke = True
+                        break
+                if broke:
+                    break
+        else: # search for a cover:
+            im[im[:, :, 0] != im[:, :, 1]] = 0
+            im[im[:, :, 2] != im[:, :, 1]] = 0
+            killing_range = FIRE_RANGE
+            my_path = spm.plan_path(im[:, :, 0], my_pos, enemy_pos, future_length, killing_range=killing_range)
+            if my_path:
+                direc = np.asarray(my_path[1][:2]) - my_pos
+            else: #no cover, just run far from enemy:
+                direc = (np.asarray(my_pos) - np.asarray(enemy_pos))
+                direc = direc / np.linalg.norm(direc)
+                direc = np.round(direc)
+
+            self._action = self.get_action_9_actions(direc[0], direc[1])
 
         if False: ## old code:
             plt.rcParams["axes.grid"] = False
