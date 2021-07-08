@@ -267,7 +267,7 @@ def plan_path(my_map, blue, red, depth):
 
     if len(closest_cover):
         if (np.asarray(blue) == closest_cover).all():
-            return [closest_cover]
+            return [[closest_cover[0]],[closest_cover[0]]]
         map_3d = make_3d_map(possible_locs, blue, red, depth=depth)
         time_to_cover = possible_locs[closest_cover[1], closest_cover[0]]
         path = find_path_to_cover(map_3d, blue, red, closest_cover, time_to_cover)
