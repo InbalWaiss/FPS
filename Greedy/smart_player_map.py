@@ -193,6 +193,66 @@ def update_killing_range(covers_map, possible_locs, killing_range):
         covers_map[cover[1], cover[0]] = reach_time
     return covers_map
 
+def plan_next_action(state):
+    future_length = 7
+    my_pos = state.my_pos.get_tuple()
+    enemy_pos = state.enemy_pos.get_tuple()
+    im = state.get_image()
+    fire = im[:, :, 0] > im[:, :, 1] + 50
+    # maybe fire is near and we can win:
+    if fire[my_pos[0] - 1:my_pos[0] + 1, my_pos[1] - 1:my_pos[1] + 1].any():
+        for i in range(-1, 2):
+            broke = False
+            for j in range(-1, 2):
+                loc = [my_pos[0] + i, my_pos[1] + j]
+                if fire[loc[0], loc[1]]:
+                    action = get_action_9_actions(i, j, my_pos, fire.shape)
+                    broke = True
+                    break
+            if broke:
+                break
+    else:  # search for a cover:
+        im[im[:, :, 0] != im[:, :, 1]] = 0
+        im[im[:, :, 2] != im[:, :, 1]] = 0
+        killing_range = FIRE_RANGE
+        my_path = plan_path(im[:, :, 0], my_pos, enemy_pos, future_length, killing_range=killing_range)
+        if my_path:
+            direc = np.asarray(my_path[1][:2]) - my_pos
+        else:  # no cover, just run far from enemy:
+            direc = (np.asarray(my_pos) - np.asarray(enemy_pos))
+            direc = direc / np.linalg.norm(direc)
+            direc = np.round(direc)
+
+        action = get_action_9_actions(direc[0], direc[1], my_pos, fire.shape)
+        return action
+
+def get_action_9_actions( delta_x, delta_y, loc, shape):
+    """9 possible moves!"""
+    if loc[0] + delta_x < 0 or loc[0] + delta_x > shape[0]:
+        delta_x = 0
+    if loc[1] + delta_y < 0 or loc[1] + delta_y > shape[1]:
+        delta_y = 0
+
+    if delta_x == 1 and delta_y == -1:
+        a = AgentAction.TopRight
+    elif delta_x == 1 and delta_y == 0:
+        a = AgentAction.Right
+    elif delta_x == 1 and delta_y == 1:
+        a = AgentAction.BottomRight
+    elif delta_x == 0 and delta_y == -1:
+        a = AgentAction.Bottom
+    elif delta_x == 0 and delta_y == 0:
+        a = AgentAction.Stay
+    elif delta_x == 0 and delta_y == 1:
+        a = AgentAction.Top
+    elif delta_x == -1 and delta_y == -1:
+        a = AgentAction.BottomLeft
+    elif delta_x == -1 and delta_y == 0:
+        a = AgentAction.Left
+    elif delta_x == -1 and delta_y == 1:
+        a = AgentAction.TopLeft
+
+    return a
 
 def plan_path(my_map, blue, red, depth, killing_range):
     covers_map, _, without_obs = calc_covers_map(my_map, red, depth=FIRE_RANGE+3)

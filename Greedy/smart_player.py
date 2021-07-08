@@ -129,59 +129,8 @@ class SmartPlayer(AbsDecisionMaker):
 
         pass
 
-
     def get_action(self, state: State, evaluate=False)-> AgentAction:
-        future_length = 7
-        my_pos = state.my_pos.get_tuple()
-        enemy_pos = state.enemy_pos.get_tuple()
-        im = state.get_image()
-        fire = im[:, :, 0] > im[:, :, 1] + 50
-        # maybe fire is near and we can win:
-        if fire[my_pos[0]-1:my_pos[0]+1, my_pos[1]-1:my_pos[1]+1].any():
-            for i in range(-1, 2):
-                broke = False
-                for j in range(-1, 2):
-                    loc = [my_pos[0]+i, my_pos[1]+j]
-                    if fire[loc[0], loc[1]]:
-                        self._action = self.get_action_9_actions(i, j)
-                        broke = True
-                        break
-                if broke:
-                    break
-        else: # search for a cover:
-            im[im[:, :, 0] != im[:, :, 1]] = 0
-            im[im[:, :, 2] != im[:, :, 1]] = 0
-            killing_range = FIRE_RANGE
-            my_path = spm.plan_path(im[:, :, 0], my_pos, enemy_pos, future_length, killing_range=killing_range)
-            if my_path:
-                direc = np.asarray(my_path[1][:2]) - my_pos
-            else: #no cover, just run far from enemy:
-                direc = (np.asarray(my_pos) - np.asarray(enemy_pos))
-                direc = direc / np.linalg.norm(direc)
-                direc = np.round(direc)
-
-            self._action = self.get_action_9_actions(direc[0], direc[1])
-
-        if False: ## old code:
-            plt.rcParams["axes.grid"] = False
-            im_3d = np.tile(im[:,:,0], (future_length,1,1))
-
-            stages = [255, 240, 225, 210, 195, 165,150]
-            assert(future_length <= len(stages))
-
-            im = state.get_image()[:,:,0]
-            for i in range(future_length):
-                im_3d[i,:,:][im >= stages[i]] = stages[i]
-
-            vis.show_3d_as_strip(im_3d.transpose())
-            my_loc = state.my_pos.get_tuple()
-            my_loc = [my_loc[1],my_loc[0]]
-            good_hide = (11,6)
-            solver = Solver()
-            path_3d = solver.find_shortest_path_3d(im_3d.transpose(), my_loc, good_hide)
-            im_3d_embeded = mapper.embed_path_in_3d_map(im_3d.transpose(),path_3d,0,70)
-            vis.show_3d_as_strip(im_3d_embeded)
-
+        spm.plan_next_action(state)
         return self._action
 
     def find_closest_point_in_enemy_LOS(self, my_pos, enemy_pos):
