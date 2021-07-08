@@ -52,14 +52,17 @@ def calc_covers_map_old(my_map, red, depth=10):
     return covers_map, possible_locs, without_obs
 
 
-def calc_fire_range(my_map, enemy, depth):
+def calc_covers_map(my_map, enemy):
+    enemy = np.asarray(enemy)
     fire_map = np.zeros_like(my_map)
     for j in [0, my_map.shape[1]]:
         for i in range(my_map.shape[0]):
-            update_clear_range(my_map, np.asarray([i, j]), enemy, depth, fire_map)
+            #update_clear_range(my_map, np.asarray([i, j]), enemy, depth, fire_map)
+            mark_beyond_clear_range(my_map, np.asarray([i, j]), enemy, fire_map)
     for i in [0, my_map.shape[0]]:
         for j in range(my_map.shape[1]):
-            update_clear_range(my_map, np.asarray([i, j]), enemy, depth, fire_map)
+            # update_clear_range(my_map, np.asarray([i, j]), enemy, depth, fire_map)
+            mark_beyond_clear_range(my_map, np.asarray([i, j]), enemy, fire_map)
     return fire_map
 
 
@@ -75,18 +78,17 @@ def update_clear_range(obs_map, to_loc, from_loc, depth, fire_map):
         else:
             fire_map[loc[0], loc[1]] = True
 
-
-def calc_covers_map(my_map, red, depth):
-    possible_locs = calc_fire_range(my_map, red, depth)
-    without_obs = calc_fire_range(np.zeros_like(my_map), red, depth)
-    diff = np.abs(possible_locs - without_obs)
-    diff[my_map == 100] = 0
-
-    # dilate obs:
-    fat_obs = cv.dilate(my_map, kernel=np.ones((2, 2)))
-    cover_near_obs = diff * fat_obs
-    cover_near_obs[my_map>0]=0
-    return cover_near_obs, possible_locs, without_obs
+def mark_beyond_clear_range(obs_map, to_loc, from_loc, fire_map):
+    dist = np.linalg.norm(to_loc - from_loc)
+    step = 1./dist
+    met_wall = False
+    for α in np.arange(0, 1, step):
+        loc = np.abs((1-α)*from_loc + α*to_loc).astype(int)
+        if met_wall and not obs_map[loc[0], loc[1]]:
+            met_wall = False
+            fire_map[loc[0], loc[1]] = 1
+        if obs_map[loc[0], loc[1]]:
+            met_wall = True
 
 
 def make_3d_map(map_2d, blue, red, depth):
@@ -124,9 +126,7 @@ def find_path_to_cover(map_3d, blue, red, closest_cover, time_to_cover):
     weights = map_3d.copy()
     weights[weights==0] = 1
     weights[weights == 1] = 1000
-    if time_to_cover > weights.shape[2]:
-        return []
-    path_3d, _ = sg.route_through_array(weights, [blue[0], blue[1], 0], [closest_cover[0], closest_cover[1], int(time_to_cover-1)], geometric=True)
+    path_3d, _ = sg.route_through_array(weights, [blue[0], blue[1], 0], [closest_cover[0], closest_cover[1], int(weights.shape[2]-1)], geometric=True)
     # map_with_path = embed_path_in_3d_map(map_3d.astype(float), path_3d, 1, enum=4)
     # show_3d_as_video(map_with_path,case='map_with_path')
     return path_3d
@@ -174,7 +174,7 @@ def update_killing_range(covers_map, possible_locs, killing_range):
     # for all covers, calc when they will be in kiling range of a possible enemy loc
     covers = np.where(covers_map)
     n_covers = len(covers[0])
-    obs_map = possible_locs == 1
+    obs_map = possible_locs == 100
     for cover_i in range(n_covers):
         cover = np.asarray([covers[0][cover_i], covers[1][cover_i]])
         final_reach_time = int(possible_locs[cover[1], cover[0]])
@@ -190,7 +190,7 @@ def update_killing_range(covers_map, possible_locs, killing_range):
                     break
             if found:
                 break
-        covers_map[cover[1], cover[0]] = reach_time
+        covers_map[cover[0], cover[1]] = reach_time
     return covers_map
 
 def plan_next_action(state):
@@ -205,6 +205,8 @@ def plan_next_action(state):
             broke = False
             for j in range(-1, 2):
                 loc = [my_pos[0] + i, my_pos[1] + j]
+                if loc[0] < 0 or loc[0] >= fire.shape[0] or loc[1] < 0 or loc[1] >= fire.shape[1]:
+                    continue
                 if fire[loc[0], loc[1]]:
                     action = get_action_9_actions(i, j, my_pos, fire.shape)
                     broke = True
@@ -215,7 +217,7 @@ def plan_next_action(state):
         im[im[:, :, 0] != im[:, :, 1]] = 0
         im[im[:, :, 2] != im[:, :, 1]] = 0
         killing_range = FIRE_RANGE
-        my_path = plan_path(im[:, :, 0], my_pos, enemy_pos, future_length, killing_range=killing_range)
+        my_path = plan_path(im[:, :, 0], my_pos, enemy_pos, future_length)
         if my_path:
             direc = np.asarray(my_path[1][:2]) - my_pos
         else:  # no cover, just run far from enemy:
@@ -254,15 +256,19 @@ def get_action_9_actions( delta_x, delta_y, loc, shape):
 
     return a
 
-def plan_path(my_map, blue, red, depth, killing_range):
-    covers_map, _, without_obs = calc_covers_map(my_map, red, depth=FIRE_RANGE+3)
-    possible_locs = calc_possible_locs(my_map, red, depth=FIRE_RANGE+3, neighborhood=8)
-    covers_map = update_killing_range(covers_map.astype(int), possible_locs, FIRE_RANGE+3)
+def plan_path(my_map, blue, red, depth):
+    covers_map = calc_covers_map(my_map, red)
+    possible_locs = calc_possible_locs(my_map, red, depth=FIRE_RANGE, neighborhood=8)
+    possible_locs[possible_locs == 0] = FIRE_RANGE+1
+    without_obs = calc_possible_locs(np.zeros_like(my_map), red, depth=FIRE_RANGE, neighborhood=8)
+    covers_map = update_killing_range(covers_map.astype(int), possible_locs, FIRE_RANGE)
 
     closest_cover = select_cover(covers_map, without_obs, blue, red)
-    map_3d = make_3d_map(possible_locs,  blue, red, depth=depth)
 
     if len(closest_cover):
+        if (np.asarray(blue) == closest_cover).all():
+            return [closest_cover]
+        map_3d = make_3d_map(possible_locs, blue, red, depth=depth)
         time_to_cover = possible_locs[closest_cover[1], closest_cover[0]]
         path = find_path_to_cover(map_3d, blue, red, closest_cover, time_to_cover)
         return path
