@@ -193,6 +193,16 @@ def update_killing_range(covers_map, possible_locs, killing_range):
         covers_map[cover[0], cover[1]] = reach_time
     return covers_map
 
+
+def find_move_in_path(player_path):
+    i = 0
+    while i < len(player_path)-1 and player_path[i][:2] == player_path[i+1][:2] :
+        i += 1
+    if i < len(player_path)-1:
+        return player_path[i+1]
+    else:
+        return player_path[i]
+
 def plan_next_action(state):
     future_length = 7
     my_pos = state.my_pos.get_tuple()
@@ -219,14 +229,17 @@ def plan_next_action(state):
         killing_range = FIRE_RANGE
         my_path = plan_path(im[:, :, 0], my_pos, enemy_pos, future_length)
         if my_path:
-            direc = np.asarray(my_path[1][:2]) - my_pos
+            next_step = find_move_in_path(my_path)
+            direc = np.asarray(next_step[:2]) - my_pos
+            print("Go to cover: ", str(next_step[:2]), str(direc))
         else:  # no cover, just run far from enemy:
             direc = (np.asarray(my_pos) - np.asarray(enemy_pos))
             direc = direc / np.linalg.norm(direc)
             direc = np.round(direc)
+            print("Run form enemy:", direc)
 
         action = get_action_9_actions(direc[0], direc[1], my_pos, fire.shape)
-        return action
+    return action
 
 def get_action_9_actions( delta_x, delta_y, loc, shape):
     """9 possible moves!"""
@@ -243,8 +256,6 @@ def get_action_9_actions( delta_x, delta_y, loc, shape):
         a = AgentAction.BottomRight
     elif delta_x == 0 and delta_y == -1:
         a = AgentAction.Bottom
-    elif delta_x == 0 and delta_y == 0:
-        a = AgentAction.Stay
     elif delta_x == 0 and delta_y == 1:
         a = AgentAction.Top
     elif delta_x == -1 and delta_y == -1:
@@ -253,6 +264,8 @@ def get_action_9_actions( delta_x, delta_y, loc, shape):
         a = AgentAction.Left
     elif delta_x == -1 and delta_y == 1:
         a = AgentAction.TopLeft
+    else: ## delta_x == 0 and delta_y == 0:
+        a = AgentAction.Stay
 
     return a
 

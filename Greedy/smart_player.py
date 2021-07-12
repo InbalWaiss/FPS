@@ -130,7 +130,8 @@ class SmartPlayer(AbsDecisionMaker):
         pass
 
     def get_action(self, state: State, evaluate=False)-> AgentAction:
-        spm.plan_next_action(state)
+        action = spm.plan_next_action(state)
+        self._action = action
         return self._action
 
     def find_closest_point_in_enemy_LOS(self, my_pos, enemy_pos):
