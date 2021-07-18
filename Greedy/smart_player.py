@@ -36,6 +36,7 @@ class SmartPlayer(AbsDecisionMaker):
         self.load_data()
 
     def load_data(self):
+        pass
         # all_pairs_distances_path = './Greedy/all_pairs_distances_' + DSM_name + '_' +  '.pkl'
         # if os.path.exists(all_pairs_distances_path):
         #     with open(all_pairs_distances_path, 'rb') as f:
@@ -60,20 +61,20 @@ class SmartPlayer(AbsDecisionMaker):
         #     with open(all_pairs_distances_path, 'rb') as f:
         #         # self.all_pairs_distances = pickle.load(f)
         #         # print("Greedy: all_pairs_distances loaded")
-        self.all_pairs_distances = all_pairs_distances
-
-        #all_pairs_shortest_path_path = './Greedy/all_pairs_shortest_path_' + DSM_name + '___' + '.pkl'
-        all_pairs_shortest_path_path = './Greedy/all_pairs_shortest_path_' + DSM_name + '___filtered_long_paths_50_no_double' + '.pkl'
-        if os.path.exists(all_pairs_shortest_path_path):
-            with open(all_pairs_shortest_path_path, 'rb') as f:
-                self.all_pairs_shortest_path = pickle.load(f)
-                print("Greedy: all_pairs_shortest_path loaded")
-
-        closest_target_dict_path = './Greedy/closest_target_dict_' + DSM_name + '_' + str(FIRE_RANGE) + '.pkl'
-        if os.path.exists(closest_target_dict_path):
-            with open(closest_target_dict_path, 'rb') as f:
-                self.closest_target_dict = pickle.load(f)
-                print("Greedy: closest_target_dict loaded")
+        # self.all_pairs_distances = all_pairs_distances
+        #
+        # #all_pairs_shortest_path_path = './Greedy/all_pairs_shortest_path_' + DSM_name + '___' + '.pkl'
+        # all_pairs_shortest_path_path = './Greedy/all_pairs_shortest_path_' + DSM_name + '___filtered_long_paths_50_no_double' + '.pkl'
+        # if os.path.exists(all_pairs_shortest_path_path):
+        #     with open(all_pairs_shortest_path_path, 'rb') as f:
+        #         self.all_pairs_shortest_path = pickle.load(f)
+        #         print("Greedy: all_pairs_shortest_path loaded")
+        #
+        # closest_target_dict_path = './Greedy/closest_target_dict_' + DSM_name + '_' + str(FIRE_RANGE) + '.pkl'
+        # if os.path.exists(closest_target_dict_path):
+        #     with open(closest_target_dict_path, 'rb') as f:
+        #         self.closest_target_dict = pickle.load(f)
+        #         print("Greedy: closest_target_dict loaded")
 
     def create_graph(self):
         G = nx.grid_2d_graph(SIZE_X, SIZE_Y)

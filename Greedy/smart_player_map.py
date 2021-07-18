@@ -207,7 +207,7 @@ def plan_next_action(state):
     future_length = 7
     my_pos = state.my_pos.get_tuple()
     enemy_pos = state.enemy_pos.get_tuple()
-    im = state.get_image()
+    im = state.env
     fire = im[:, :, 0] > im[:, :, 1] + 50
     # maybe fire is near and we can win:
     if fire[my_pos[0] - 1:my_pos[0] + 1, my_pos[1] - 1:my_pos[1] + 1].any():
